@@ -36,9 +36,8 @@ export default class Login extends Component {
             this.setState({
                 mail: this.userData.mail,
                 passwrd: this.userData.passwrd,
-                loginError: this.userData.loginError
+                loginError: ''
               })
-              console.log(this.state)
         } else {
             this.setState({
                 mail: '',
