@@ -87,12 +87,10 @@ export default class SignUp extends Component {
           let phone = this.state.phone;
           let dob = this.state.dob;
           let isValid = true;
-      
           if (!name) {
             isValid = false;
             this.setState({nameError : "Please enter your name."});
           }
-      
           if (!email) {
             isValid = false;
             this.setState({emailError :"Please enter your email Address."});
@@ -103,7 +101,6 @@ export default class SignUp extends Component {
               this.setState({emailError :"Please enter valid email address."});
             }
           }
-          
           if(password.trim === ""){
             isValid = false;
             this.setState({passwordError :"Password is required."});
@@ -114,19 +111,16 @@ export default class SignUp extends Component {
               this.setState({passwordError :"Password must contain atleast 8 characters, 1 number, 1 upper and 1 lowercase !"});
             }
           }
-
           if (!phone) {
             isValid = false;
             this.setState({phoneError: "Please enter your phone number."});
           }
-      
           if (phone !== "undefined") {  
             if(phone.length !== 10){
               isValid = false;
               this.setState({phoneError: "Please enter valid phone number."});
             }
           }
-
           if (!dob) {
             isValid = false;
             this.setState({dobError: "Please enter your Date Of Birth."});
@@ -137,34 +131,26 @@ export default class SignUp extends Component {
                 this.setState({dobError :"Please enter valid Date of Birth."});
             }
           }
-
           this.setState({agree: false})
-
-      
           return isValid;
       }
 
-        checkboxHandler(event) {
-          var bool = this.state.agree;
-            this.setState({
-               agree: !bool
-            });
-            console.log(bool)
-        }
+    checkboxHandler(event) {
+      var bool = this.state.agree;
+        this.setState({
+           agree: !bool
+        });
+    }
 
-        chartAllow = (e) => {
-            this.setState({name: e.target.value.replace(/[^a-zA-Z\s]/, ''), nameError: ''})
-        }
+    chartAllow = (e) => {
+        this.setState({name: e.target.value.replace(/[^a-zA-Z\s]/, ''), nameError: ''})
+    }
 
-      
     render() {
-        
-        
         return (<>
             <div className="form">
             <form onSubmit={this.handleSubmit}>
                 <h3>Sign Up</h3>
-
                 <div className="form-group">
                     <label>Name</label>
                     <input type="text" value={this.state.name} className="form-control" placeholder="First name" onChange={this.chartAllow}/>

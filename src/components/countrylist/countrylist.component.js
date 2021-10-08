@@ -26,7 +26,6 @@ class CountryList extends React.Component {
             })
             .then(() => {
                 const result = Object.keys(this.state.items).sort();
-                console.log(result);
                 this.setState({
                     sortedData: result
                 });
@@ -35,18 +34,16 @@ class CountryList extends React.Component {
     }
     handleChange =(e, index) => {
         e.preventDefault();
-        console.log(e.target.innerHTML);
         const players = Object.values(this.state.items);
         window.localStorage.setItem('playerlist', JSON.stringify(players[index]));
         window.location.href='/player';
-        console.log(players)
     }
     render() {
    
         return (
         <div style={{width: "100%"}} >
             <br/> 
-            <div style={{paddingLeft: 30, fontSize: 20, color: "red"}}><b>Please find the list of Teams available for World Cup : </b></div>
+            <div style={{paddingLeft: 30, fontSize: 20, color: "#012a93"}}><b>Please find the list of Teams available for World Cup : </b></div>
             <br/>
             <div className="countryName" style={{width: "100%"}}>
                 <div style={{width: "40%"}}>
@@ -57,9 +54,7 @@ class CountryList extends React.Component {
                 }
                 </div>
                 <img className="right-img"  src={wcimg} alt='worldcup' width="90%" height="80%"></img>
-            </div> 
-            
-            
+            </div>
         </div>
     );
 }

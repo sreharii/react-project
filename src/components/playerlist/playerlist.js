@@ -4,7 +4,6 @@ class PlayerList extends React.Component {
 
     constructor(props) {
         super(props);
-        
         this.state = {
             players: [],
             sortedplayers: [],
@@ -22,7 +21,6 @@ class PlayerList extends React.Component {
             }
         });
         playerdata.sort();
-        console.log(playerdata);
         this.setState({players: playerdata, captain: cap});
     }
     handleClick = () => {
@@ -36,12 +34,11 @@ class PlayerList extends React.Component {
     handleChange = () => {
         var player = this.state.players.sort();
         this.setState({players: player})
-        console.log(player);
     }
     render(){
         return(
         <div style={{width: "100%", textAlign: 'center'}}>
-            <h1 style={{fontSize: 18}}>Team members List</h1>
+            <h1 style={{fontSize: 18, color: '#012a93'}}>Team members List</h1>
             <button style={{marginRight: 20}} className="btn btn-primary btn-block" onClick={this.handleClick}> Sort by lastName </button>
             <button className="btn btn-primary btn-block" onClick={this.handleChange}> Sort by firstName </button>
             <br/>

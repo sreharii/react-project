@@ -73,7 +73,6 @@ export default class Login extends Component {
                         Don't have an account <a href="/sign-up">Sign Up</a>
                     </p>
                 </div>
-
             </form>
             </div>
             </>

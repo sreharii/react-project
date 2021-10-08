@@ -7,7 +7,6 @@ class Home extends Component {
         let record = JSON.parse(window.localStorage.getItem('user'));
         let list = Object.values(record);
         list = list.filter(item => item !== "" && item !== true);
-        console.log(list);
         this.state = {
             comments: list,
         };
@@ -20,7 +19,7 @@ class Home extends Component {
         <div style={{width: "100%"}}>
             <div style={{textAlign: "center" , color:'red', fontSize: 20}}><b>Welcome to the user page.</b></div>
             <br />
-            <div style={{paddingLeft: 20, fontSize: 20}}><b>Please find the user information</b></div> 
+            <div style={{paddingLeft: 20, fontSize: 20, color: '#012a93'}}><b>Please find the user information</b></div> 
             <br />
             <ul>
                 {this.state.comments.map((item, index) => {
