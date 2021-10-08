@@ -1,4 +1,6 @@
 import React from "react";
+import './countrylist.css';
+import wcimg from '../../worldcup.jpg'
 
 class CountryList extends React.Component {
    
@@ -44,13 +46,19 @@ class CountryList extends React.Component {
         return (
         <div style={{width: "100%"}} >
             <br/> 
-            <div style={{paddingLeft: 30}}><b>Please find the list of Teams available for World Cup : </b></div>
-            <br/> 
-            {
-                this.state.sortedData.map((item, index) => ( 
-                <ul key = { index } > <a href='/player' target="_blank" onClick={(e) => this.handleChange(e, index)}>{item}</a></ul>
-                ))
-            }
+            <div style={{paddingLeft: 30, fontSize: 20, color: "red"}}><b>Please find the list of Teams available for World Cup : </b></div>
+            <br/>
+            <div className="countryName" style={{width: "100%"}}>
+                <div style={{width: "40%"}}>
+                {
+                    this.state.sortedData.map((item, index) => ( 
+                    <ul key = { index } > <a className="link" href='/player' target="_blank" onClick={(e) => this.handleChange(e, index)}>{item}</a></ul>
+                    ))
+                }
+                </div>
+                <img className="right-img"  src={wcimg} alt='worldcup' width="90%" height="80%"></img>
+            </div> 
+            
             
         </div>
     );

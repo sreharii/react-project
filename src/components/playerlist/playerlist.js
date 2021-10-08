@@ -47,7 +47,7 @@ class PlayerList extends React.Component {
             <br/>
             <div style={{paddingTop: 10}}>{
                 this.state.players.map((item, index) => ( 
-                <ol key = { index } style={{ paddingLeft: 100, display: "flex", color: item === this.state.captain? 'red': 'black', fontWeight: item === this.state.captain? 'bold': 'normal',  fontSize: 11}}>{item}</ol>
+                <ol key = { index } style={{ paddingLeft: 100, display: "flex", marginBottom: 10, color: item === this.state.captain? 'red': 'black', fontWeight: item === this.state.captain? 'bold': 'normal',  fontSize: 12}}>{item}</ol>
                 ))
             }</div>
             

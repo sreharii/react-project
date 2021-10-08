@@ -1,0 +1,12 @@
+.countryName {
+    display: inline-flex;
+}
+.countryName, .right-img {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+  
+.right-img {
+    object-fit: fill;
+    object-position: right;
+  }

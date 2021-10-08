@@ -18,15 +18,15 @@ class Home extends Component {
     render(){
         return(
         <div style={{width: "100%"}}>
-            <div style={{textAlign: "center" , fontSize: 20}}><b>Welcome to the user page.</b></div>
+            <div style={{textAlign: "center" , color:'red', fontSize: 20}}><b>Welcome to the user page.</b></div>
             <br />
-            <div style={{paddingLeft: 20}}><b>Please find the user information</b></div> 
+            <div style={{paddingLeft: 20, fontSize: 20}}><b>Please find the user information</b></div> 
             <br />
             <ul>
                 {this.state.comments.map((item, index) => {
                     return (
-                    <ul key={index}>{item}
-                    </ul>);
+                    <ol style={{marginBottom: 15}} key={index}>{item}
+                    </ol>);
                 })}
             </ul>
 

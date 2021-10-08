@@ -22,7 +22,9 @@ export default class Login extends Component {
       handleLogin = (event) => {
         event.preventDefault();
         var loginData = JSON.parse(window.localStorage.getItem('user'));
-        if (loginData.email === this.state.mail && loginData.password === this.state.passwrd) {
+        if (!loginData) {
+          this.setState({loginError: "Email id doesn't exist.. please sign-up"}); 
+        } else if (loginData.email === this.state.mail && loginData.password === this.state.passwrd && loginData) {
             var clientData = this.state;
             window.localStorage.setItem('loginuser', JSON.stringify(clientData));
             window.location.href='/home';

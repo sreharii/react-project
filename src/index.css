@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  background: #1C8EF9 !important;
+  background: #fff !important;
   min-height: 100vh;
   display: flex;
   font-weight: 400;
@@ -89,4 +89,14 @@ body, html, .App, #root, .auth-wrapper {
 .left-img {
   object-fit: fill;
   object-position: left;
+}
+
+.link {
+  color: black;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: red !important;
+  cursor: pointer;
 }
